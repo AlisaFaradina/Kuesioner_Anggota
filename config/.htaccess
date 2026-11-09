@@ -1,0 +1,5 @@
+# Lindungi file konfigurasi database lokal dari akses browser
+<Files "db.local.php">
+    Order allow,deny
+    Deny from all
+</Files>

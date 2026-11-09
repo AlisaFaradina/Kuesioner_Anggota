@@ -1,0 +1,1112 @@
+/* ============================================================
+   KUESIONER ANGGOTA - Main Stylesheet
+   Desain Selaras dengan Identitas Layanan Syariah BMT Fastabiq
+   Konsep: Minimalis 3 Warna, Compact, Profesional & Konsisten
+============================================================ */
+
+:root {
+  /* PALET 3 WARNA UTAMA */
+  /* 1. Warna Utama (Teal / Emerald): Aksi, Identitas, Highlight */
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --primary-hover: #0d9488;
+  --primary-light: #f0fdf4;
+  --primary-border: #bbf7d0;
+
+  /* 2. Warna Netral (Slate / Netral): Teks, Garis, Latar */
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* 3. Warna Putih (Kontainer / Card) */
+  --bg-card: #ffffff;
+
+  /* Dimensi & Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.45;
+  font-size: 0.88rem;
+}
+
+/* ============================================================
+   TYPOGRAPHY & ELEMEN DASAR
+============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+  margin-top: 0;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 0.98rem; }
+h5 { font-size: 0.88rem; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+.text-primary-fastabiq {
+  color: var(--primary) !important;
+}
+
+.bg-primary-fastabiq {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   KONSISTENSI UKURAN TOMBOL (BUTTONS)
+============================================================ */
+.btn {
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  font-size: 0.78rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 5px;
+}
+
+.btn-lg {
+  font-size: 0.92rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+/* Tombol Aksi Utama (Teal) */
+.btn-primary, .btn-primary-survey {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.btn-primary:hover, .btn-primary-survey:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Tombol besar untuk halaman survey */
+.btn-primary-survey {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.2);
+}
+
+/* Tombol Sekunder / Garis */
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-secondary {
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+  background-color: #ffffff !important;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--bg-main) !important;
+  border-color: var(--border-hover) !important;
+  color: var(--text-main) !important;
+}
+
+.btn-success {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.btn-success:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+/* ============================================================
+   BADGE PREDIKAT KEPUASAN (3 WARNA)
+============================================================ */
+.badge-branch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-sangat-puas {
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+
+.badge-puas {
+  background: #f8fafc;
+  color: var(--primary);
+  border: 1px solid #cbd5e1;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+
+.badge-cukup-puas {
+  background: #f8fafc;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+
+.badge-kurang-puas {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+
+/* ============================================================
+   ADMIN WORKSPACE & SIDEBAR (COMPACT & RAPI)
+============================================================ */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.admin-brand {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.admin-brand-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-brand-sub {
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+
+.admin-user-pill {
+  padding: 12px 16px;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admin-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-nav {
+  padding: 12px 10px;
+  flex: 1;
+  overflow-y: auto;
+}
+.admin-nav-heading {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 6px 10px 4px;
+}
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+  margin-bottom: 2px;
+}
+.admin-nav-item:hover {
+  background: var(--bg-main);
+  color: var(--primary);
+}
+.admin-nav-item.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.admin-main {
+  margin-left: 240px;
+  flex: 1;
+  background: var(--bg-main);
+  min-height: 100vh;
+  padding: 22px 28px;
+}
+
+/* ============================================================
+   KARTU STATISTIK (STAT CARDS - COMPACT)
+============================================================ */
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease;
+  height: 100%;
+}
+.stat-card:hover {
+  border-color: var(--border-hover);
+}
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.stat-value {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.stat-sub {
+  font-size: 0.74rem;
+  color: var(--text-light);
+}
+
+/* ============================================================
+   KARTU & TABEL UMUM (COMPACT & RAPI)
+============================================================ */
+.card {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.table {
+  font-size: 0.82rem;
+}
+.table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+  padding: 9px 12px;
+}
+.table td {
+  padding: 8px 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+}
+.table-hover tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* ============================================================
+   PODIUM PERINGKAT (CLEAN 3 WARNA)
+============================================================ */
+.podium-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 14px;
+  margin: 20px 0;
+  padding: 6px 0;
+}
+.podium-step {
+  text-align: center;
+  flex: 1;
+  max-width: 210px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 12px 14px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.podium-step.gold {
+  border-color: var(--primary);
+  border-width: 1.5px;
+  transform: translateY(-8px);
+}
+.podium-step.silver {
+  border-color: var(--border-color);
+}
+.podium-step.bronze {
+  border-color: var(--border-color);
+}
+.podium-rank-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  background: var(--bg-main);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+.gold .podium-rank-badge {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-border);
+}
+
+/* ============================================================
+   KUESIONER ANGGOTA (RESPONSIVE HERO & WIZARD SKALA 1–4)
+============================================================ */
+.survey-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+}
+
+.survey-header {
+  background: #ffffff;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.survey-header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.survey-header-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.survey-brand {
+  display: flex;
+  align-items: center;
+}
+.survey-title-text {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.survey-subtitle-text {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.survey-body {
+  flex: 1;
+  padding: 24px 16px 40px;
+}
+
+/* Landing Hero Section (Desktop & Mobile Adaptive) */
+.survey-landing-hero {
+  max-width: 1180px;
+  margin: 12px auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 15px 35px -10px rgba(15, 118, 110, 0.08);
+}
+
+.hero-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 6px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #166534;
+  letter-spacing: 0.04em;
+}
+.hero-brand-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.hero-greeting {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+.hero-main-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.text-teal-accent {
+  color: var(--primary);
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.4;
+}
+.hero-intro-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Feature Value Cards */
+.hero-feature-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+.hero-feature-card:hover {
+  border-color: #99f6e4;
+  background: #f0fdfa;
+  transform: translateY(-2px);
+}
+.hero-feature-card .feature-icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.hero-feature-card .feature-title {
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+.hero-feature-card .feature-desc {
+  font-size: 0.70rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* CTA Button */
+.btn-hero-cta {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px -4px rgba(15, 118, 110, 0.4);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-hero-cta:hover {
+  background: var(--primary-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(15, 118, 110, 0.5);
+}
+
+/* Showcase Phone Mockup Frame */
+.hero-showcase-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+.phone-mockup-frame {
+  width: 290px;
+  background: #ffffff;
+  border: 9px solid #1e293b;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(0,0,0,0.05);
+  overflow: hidden;
+  position: relative;
+}
+.phone-speaker-bar {
+  width: 60px;
+  height: 5px;
+  background: #334155;
+  border-radius: 4px;
+  margin: 8px auto 6px;
+}
+.phone-screen-content {
+  padding: 12px 14px 18px;
+  background: #ffffff;
+}
+.mockup-app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 10px;
+}
+.mockup-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.cs-avatar-wrap {
+  flex-shrink: 0;
+}
+.mockup-card-question {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+.mockup-rating-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.mockup-rating-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 2px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 0.68rem;
+}
+.mockup-rating-opt .emoji {
+  font-size: 1.1rem;
+}
+.mockup-rating-opt .num {
+  font-weight: 700;
+  color: #334155;
+}
+.mockup-rating-opt .lbl {
+  font-size: 0.62rem;
+  color: #64748b;
+}
+.mockup-rating-opt.active-opt {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  box-shadow: 0 0 0 1px #0f766e;
+}
+.mockup-btn-fake {
+  font-size: 0.70rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Floating Badges */
+.floating-badge {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.15);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  animation: floatBadge 3s ease-in-out infinite alternate;
+  z-index: 10;
+}
+.floating-badge i {
+  font-size: 1.3rem;
+}
+.badge-top {
+  top: 10px;
+  right: -20px;
+}
+.badge-bottom {
+  bottom: 25px;
+  left: -20px;
+  animation-delay: 1.5s;
+}
+@keyframes floatBadge {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Responsive Form Wizard Container on Desktop */
+#formSurvey {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+#screenLoading {
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991.98px) {
+  .survey-wrapper {
+    background: #ffffff;
+  }
+  .survey-landing-hero {
+    border: none;
+    padding: 12px 4px;
+    box-shadow: none;
+    background: transparent;
+  }
+  .hero-main-title {
+    font-size: 1.85rem;
+  }
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+  .btn-hero-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.survey-screen {
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.survey-cover-art {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  text-align: center;
+}
+.survey-greeting {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.survey-headline {
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 6px 0 12px;
+  color: var(--text-main);
+}
+.survey-intro-text {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+.survey-badge-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0 auto 24px;
+  display: flex;
+  width: fit-content;
+}
+
+/* Rating Wizard Cards (Skala 1 - 4) */
+.survey-progress-wrap {
+  margin-bottom: 18px;
+}
+.survey-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.survey-progress-bar {
+  height: 5px;
+  background: var(--border-color);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.survey-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.survey-aspect-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.survey-question-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.survey-question-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.rating-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.rating-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+.rating-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-main);
+}
+.rating-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.rating-num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-main);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.92rem;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.rating-card.selected .rating-num {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.rating-emoji {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.rating-text-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.rating-card.selected .rating-text-label {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.selection-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.survey-nav-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn-nav-prev {
+  flex: 1;
+  padding: 10px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.btn-nav-prev:hover {
+  background: #e2e8f0;
+}
+.btn-nav-next {
+  flex: 2;
+  padding: 10px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-nav-next:hover {
+  background: var(--primary-hover);
+}
+.btn-nav-next:disabled {
+  background: #94a3b8;
+  border-color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Digital Signature Canvas */
+.signature-box {
+  border: 1.5px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  position: relative;
+  touch-action: none;
+  margin-bottom: 6px;
+}
+.signature-canvas {
+  width: 100%;
+  height: 140px;
+  display: block;
+  border-radius: var(--radius-md);
+}
+.signature-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+.btn-clear-sig {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 0.74rem;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+/* Produk Ditawarkan Checklist */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.product-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.15s;
+}
+.product-chip:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.product-chip input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+.form-feedback-group {
+  margin-bottom: 12px;
+}
+.form-feedback-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.form-feedback-group textarea {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+}
+.form-feedback-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Footer survey */
+.survey-footer-note {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-main);
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT
+============================================================ */
+@media (max-width: 991px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  .admin-main {
+    margin-left: 0;
+    padding: 16px 14px;
+  }
+}
+
+@media print {
+  .admin-sidebar, .no-print, .btn, .filter-bar {
+    display: none !important;
+  }
+  .admin-main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+}
